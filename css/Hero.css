@@ -1,0 +1,115 @@
+/*--------------------------------------------------------------
+# Welcome
+--------------------------------------------------------------*/
+#hero {
+	display: table;
+	width: 100%;
+	height:905px;
+    border-left: 100%;
+    border right: 100%; 
+    position: relative;
+    padding: 0px;
+	background: url(../img/Video/Dan%20Atherton%20Sends%20It%20Down%20the%20Hardline%20MTB%20Track%20%20Red%20Bull%20Hardline%20GoPro%20View.mp4) top center fixed;
+	  background: rgba(0,0,0,0.7) ;
+    
+}
+
+.video-elem {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+   
+}
+video  {
+    position: absolute;
+    z-index: -1;
+   
+   top: 50%;
+    
+    left: 50%;
+    
+    transform: translate(-50%,-50%);
+    min-height: 100%;
+    min-width: 100%;
+}
+
+
+
+#hero .hero-logo {
+	margin : 0px;
+    text-align: center
+    
+}
+
+#hero .hero-logo img {
+	max-width:100%;
+}
+
+#hero .hero-container {
+	background: rgba(0, 0, 0, 0.5);
+	display: table-cell;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	vertical-align:middle;
+}
+
+
+}
+
+@media (max-width: 768px) {
+	#hero h1 {
+		font-size: 28px;
+		line-height: 36px;
+	}
+}
+
+#hero h2 {
+	color: #999;
+	margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+	#hero h2 {
+		font-size: 24px;
+		line-height: 26px;
+		margin-bottom: 30px;
+	}
+
+	#hero h2 .rotating {
+		display: block;
+	}
+}
+
+#hero .rotating > .animated {
+	display: inline-block;
+}
+
+#hero .actions a {
+	font-family: heading-font;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 16px;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 8px 20px;
+	border-radius: 2px;
+	transition: 0.5s;
+	margin: 10px;
+}
+
+#hero .btn-get-started {
+	background: accent-color;
+	border: 2px solid accent-color;
+	color: #fff;
+}
+
+#hero .btn-get-started:hover {
+	background: none;
+	border: 2px solid #fff;
+	color: #fff;
+}
+	

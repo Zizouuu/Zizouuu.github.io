@@ -1,0 +1,663 @@
+<script language="JavaScript" type="text/javascript">
+	var receiveReq = getXmlHttpRequestObject();		
+	function postHelpfulness(reviewid, helpful, spanname) {
+		if (receiveReq.readyState == 4 || receiveReq.readyState == 0) {
+			var file_to_open = "./submit.php?function=helpful&id=" + reviewid + "&h=" + helpful;
+			receiveReq.open("GET", file_to_open, true);
+			receiveReq.onreadystatechange = function(){displayHelpfulness(spanname)};
+			receiveReq.send(null);
+		}			
+	}
+
+	function displayHelpfulness(spanname) {
+		if (receiveReq.readyState == 4) {
+			document.getElementById(spanname).innerHTML = receiveReq.responseText;
+		}
+	}
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Imperial Boootstrap Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+    
+  <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+   <link href="css/4-col-portfolio%201.css" rel="stylesheet">
+  
+  <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+  <link href="favicon.ico" rel="shortcut icon">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet"> 
+  
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate-css/animate.min.css" rel="stylesheet">
+  
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/Hero.css"  rel="stylesheet">
+  <link href="css/Footer1.css"  rel="stylesheet">
+  <link href="css/general.css"  rel="stylesheet">
+  <link href="css/header.css"  rel="stylesheet">
+  <link href="css/nav.css"  rel="stylesheet">
+  <link href="css/sections.css"  rel="stylesheet">
+  <link href="css/stylee.css"  rel="stylesheet">
+  <link href="css/variables.css"  rel="stylesheet">
+    
+    	
+	<!-- <link rel="StyleSheet" href="https://www.singletracks.com/ra-content/templates/stracks16/style.css" type="text/css" /> -->
+	
+	
+	<link rel="stylesheet" href="https://images.singletracks.com/cdn2/jqueryui_2_13_15/jquery-ui-1.8.10.custom.css">
+	<link rel="stylesheet" href="https://images.singletracks.com/css/tmp/bootstrap_2016-02-24/css/bootstrap.min2.css?date=4-28-16.1">
+
+
+    <script src="https://images.singletracks.com/cdn2/jquery1.11.1.min.js"></script>
+	<script src="https://images.singletracks.com/cdn2/jquery-ui.min.js"></script>
+	<script src="https://images.singletracks.com/cdn2/bootstrap_4_14_15/js/bootstrap.min.js"></script>
+
+	<script src="https://images.singletracks.com/cdn2/sng_main_15_02_19.js" language="javascript" type="text/javascript"></script>
+	<script type="text/javascript">
+		
+	</script>
+
+    <style type="text/css">
+		/* bookend		
+		body {background: #000; top: 0px left: 0px; margin: 0; padding: 0; background: #eff0eb;}
+		#bodyBG { margin: 0; padding-top: 0px; }
+		#content1 {width: 921px; margin: 0 auto;}
+		#content2 {background: #fff; float: left; width: 920px; margin: 0 auto;}
+		*/
+
+		/* Custom, iPhone Retina */ 
+		@media only screen and (min-width : 320px) {
+			#sng_header_right {display: none;}
+			#sng_logo_img {margin-left: 15px !important; height: 29px !important; margin-top: 17px;}
+			.st_right_column_element {margin-left: -15px !important;}
+			#st_nav {height: 60px !important; background-size: 100% 60px !important;}
+			.contentSpacer {height: 60px;}
+		}
+		/* Extra Small Devices, Phones */ 
+		@media only screen and (min-width : 480px) {
+			#sng_header_right {display: none;}
+			#sng_logo_img {margin-left: 15px !important;  height: 35px !important; margin-top: 13px;}
+			.st_right_column_element {margin-left: auto !important;}
+			#navbar {box-shadow: 4px 4px 10px #aaa;}
+			#st_nav {height: 60px !important; background-size: 100% 60px !important;}
+			.contentSpacer {height: 60px;}
+		}
+
+		/* Small Devices, Tablets */
+		@media only screen and (min-width : 768px) {
+			#sng_header_right {display: block;}
+			#sng_logo_img {margin-left: 15px !important;  height: 36px !important; margin-top: 13px;}
+			.sng_header_right_hide {display: none;}
+			#st_nav {height: 60px !important; background-size: 100% 60px !important;}
+			.contentSpacer {height: 60px;}
+		}
+
+		/* Medium Devices, Desktops */
+		@media only screen and (min-width : 992px) {
+			#sng_header_right {display: block;}
+			.hp_search_box {width: 70%;}
+			#sng_logo_img {height: 48px !important; margin-top: 20px;}
+			#sng_search_header {width: 100px;}
+			.sng_header_right_hide {display: inline;}
+			#navbar {box-shadow: none;}
+			#st_nav {height: 84px !important; background-size: 100% 84px !important;}
+			.contentSpacer {height: 84px;}
+		}
+
+		/* Large Devices, Wide Screens */
+		@media only screen and (min-width : 1200px) {
+			#sng_header_right {display: block;}
+			.hp_search_box {width: 70%;}
+			#sng_logo_img {height: 48px !important; margin-top: 20px;}
+			#sng_search_header {width: 150px;}
+			.sng_header_right_hide {display: inline;}
+			#st_nav {height: 84px !important; background-size: 100% 84px !important;}
+			.contentSpacer {height: 84px;}
+		}
+
+	
+
+	</style>		
+
+</head>
+
+<body onload="map_load();" >
+  <div id="preloader"></div>
+  
+  
+
+  <header id="header">
+    <div class="container">
+    
+      <div id="logo" class="pull-left">
+       <h1><a href="#hero"><i class="fa fa-bicycle"></i> <i>Peloton<b> Punique</b></i></a></h1>
+        <!-- Uncomment below if you prefer to use a text image -->
+        <!--<h1><a href="#hero">Header 1</a></h1>-->
+      </div>
+        
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#hero">Home</a></li>
+          <li><a href="News.html">News</a></li>
+          <li><a href="Trails.html">Trails</a></li>
+          <li class="menu-has-children"><a href="">Gallery</a>
+            <ul>
+              <li><a href="Bizerte.html">Bizerte</a></li>
+              <li><a href="Zaghouane.html">Zaghouane</a></li>
+              <li><a href="Nabeul.html">Nabeul</a></li>
+              <li><a href="/Carthage.html">Carthage/Sidi Bousaid</a></li>
+              <li><a href="Manouba.html">Manouba</a></li>
+            </ul>
+          </li>
+            <li><a href="Events.html">Events</a></li>
+             <li><a href="Members.html">Team</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+    
+
+    
+    
+	<!-- Page Content Starts Here --><style type="text/css">
+	#statBox {margin-bottom: 10px; margin-top: 10px;}
+	#statusForm {display: none;}
+	#moreActions {display: none;}
+	#tagForm {display: none;}
+	#widgetForm {display: none;}
+	#statBox {color: #444; font-size: 13px;}
+	#statBox a, #statBox a:link, #statBox a:visited {color: #333;}
+	#directions {display: none; margin: 0 0 10px 0;}
+	.actionBar {padding: 10px; background: #e4e6c0; margin: 5px 0; background-image: url('https://www.singletracks.com/images/backgrounds/dot-bg.gif');}
+	.actionBar li {line-height: 1.2em; font-size: 13px; overflow: hidden;}
+	.actionBar ul {margin-left: 5px; padding-left: 0px; list-style: none;}
+	.actionBar .left, .actionBar .right {float: left; width: 255px; padding-right: 15px;}
+	ul.trailList {padding: 0px; margin-top: 7px;}
+	ul.trailList li {list-style: none; font-size: 12px; padding-bottom: 5px;}
+	#photoForm {display: none;}
+	.hiliteRed2 {color: #900; font-weight: bold;}
+	.review_label_column {width: 45px; margin: 0 15px 0 5px; float: left;}
+	.review_text_column {float: left; width: 485px; margin-bottom: 10px;}
+	.review_label_pro {background: #deffca; padding: 2px; margin: 4px;}
+	.update_link {font-size: 11px;}
+	.update_link img {padding-left: 10px;}
+	.review_odd {background: #eee; padding: 10px 10px 0 10px;}
+	.review_even {background: #fff; padding: 10px 10px 0 10px;}
+	#model {display: none;}
+	.rec_prod {float: left; width: 95px; padding: 0px 10px; overflow: hidden; font-size: 12px;}
+	.st_action_link {padding-left: 25px; background-repeat: no-repeat; margin-bottom: 5px;}
+	#st_checkin_link {background-image: url('./ra-content/images/icons/stamp.png');}
+	#st_update_trail_status {background-image: url('./ra-content/images/icons/traffic-light.png');}
+	#st_add_ride_log {background-image: url('./ra-content/images/icons/chart.png');}
+	#ra_list_link7, #ra_list_link8 {margin: -5px 0;}
+	#st_status_form {display: none; padding: 5px; background: #ffc;}
+	#st_status_form2 {display: none;}
+	.st_stat_cell {padding-bottom: 7px; text-align: top; width: 50%;}
+	.st_tag_btn {height: 30px; margin: 0 5px 5px 0;}
+	#rating_stats {font-size: 12px; text-align: right; margin-top: 5px; color: #999;}
+	.st_stat1 {display: table-cell; border-right: 1px solid #ccc; background: #eaeaea; padding: 15px 0; text-align: center; height: 80px; vertical-align: middle; border-bottom: 1px solid #ccc;}
+	.st_stat2 {width: 175px; display: inline-block; margin-right: 1px; border-right: 1px solid #ccc; background: #eaeaea; padding: 25px 0; text-align: center; height: 50px;}
+	.st_stat_minor {font-size: 14px; font-weight: normal; margin-top: -15px;}
+	.st_stat_major {font-size: 24px; font-weight: bold; margin-top: -5px;}
+	#st_description.st_expand {max-height: none;}
+	#st_description {max-height: 160px; overflow: hidden;}
+	.st_link_btn {display: inline-block;}
+	.st_block_title {text-transform: uppercase; font-size: 16px;}
+	.gmnoprint img {max-width: none;}
+	ul.st_trail_features {list-style: none; margin: 0;}
+	.st_trail_features li {margin-left: -30px; text-transform: uppercase; color: #ccc; padding: 5px 0 5px 30px; background-image: url('https://images.singletracks.com/graphics/empty_cbox.png'); background-repeat: no-repeat; background-position: center left;}
+	li.st_trail_feature_check {margin-left: -30px; font-weight: bold; text-transform: uppercase; color: #000; padding: 5px 0 5px 30px; background-image: url('https://images.singletracks.com/graphics/check_cbox.png'); background-repeat: no-repeat; background-position: center left;}	
+	#st_trail_block {height: auto; padding: 15px 10px; background: #eaeaea; white-space: nowrap; overflow-x: auto; clear: both; width: 100%; margin: 10px 0 15px 0; overflow-y:hidden;}
+	.st_block_trail {height: 180px; width: 180px; margin-right: 10px; display: inline-block; background: #999;}
+	.st_local_block {height: 180px; width: 200px; background: #eaeaea; margin: 0 10px 0 0; display: inline-block; overflow: hidden; vertical-align:top;}
+	.st_club_photo {height: 140px; width: 200px; background-position: center center; background-size: cover;}
+	.st_local_text {height: 30px; font-weight: bold; padding: 5px; font-size: 12px; white-space: normal; line-height: 15px;}
+	.st_local_block ul {padding: 0px;}
+	.st_local_text a {text-decoration: none; color: #000;}
+	.st_local_text a:hover {text-decoration: underline;}
+	.st_checkin_row {margin-top: 5px; height: 32px; background: #f2f2f2; clear: both;}
+	.st_checkin_row_left {float: left; overflow: hidden; white-space: nowrap; width: 285px; padding: 4px 5px;}
+	.st_checkin_row_right {float: left; overflow: hidden; white-space: nowrap; width: 110px; padding: 4px 5px 4px 0; text-align: right;}
+	#ra_list_link8, #ra_list_link7 {display: inline-block;}
+
+	/* Custom, iPhone Retina */ 
+	@media only screen and (min-width : 320px) {
+		.st_review_avatar {display: none;}
+		.twitter_btn, .gplus_btn {display: none;}
+		.st_trail_actions {float: left; margin-left: -15px;}
+		.ra_crop_thumb {height: 115px; width: 115px;}
+		.st_content_block {display: none;}
+		.st_expand_heading {display: block;}
+		#st_primary_ad {margin: 15px 0 0 0; border: none; padding: 0;}
+		#st_question_form {width: 100%;}
+		.st_hide_title {display: none;}
+		.row {font-size: 14px;}
+		.st_mobile_tablet {display: inline;}
+		#st_description {max-height: none; overflow: visible;}
+	}
+	/* Extra Small Devices, Phones */ 
+	@media only screen and (min-width : 480px) {
+		.st_review_avatar {display: none;}
+		.twitter_btn, .gplus_btn {display: none;}
+		.st_trail_actions {float: left; margin-left: -15px;}
+		.ra_crop_thumb {height: 150px; width: 150px;}
+		.st_content_block {display: none;}
+		.st_expand_heading {display: block;}
+		#st_primary_ad {margin: 15px 0 0 0; border: none; padding: 0;}
+		#st_question_form {width: 100%;}
+		.st_hide_title {display: none;}
+		.row {font-size: 14px;}
+		.st_mobile_tablet {display: inline;}
+		#st_description {max-height: none; overflow: visible;}
+	}
+
+	/* Small Devices, Tablets */
+	@media only screen and (min-width : 768px) {
+		.st_review_avatar {display: none;}
+		.twitter_btn, .gplus_btn {display: inline;}
+		.st_trail_actions {float: left; margin-left: 0;}
+		.ra_crop_thumb {height: 150px; width: 150px;}
+		.st_content_block {display: none;}
+		.st_expand_heading {display: block;}
+		#st_primary_ad {text-align: center;}
+		#st_question_form {width: 800px;}
+		.st_hide_title {display: none;}
+		.row {font-size: 14px;}
+		.st_mobile_tablet {display: inline;}
+		#st_description {max-height: none; overflow: visible;}
+	}
+
+	/* Medium Devices, Desktops */
+	@media only screen and (min-width : 992px) {
+		.st_review_avatar {display: block;}
+		.twitter_btn, .gplus_btn {display: inline;}
+		.st_trail_actions {float: right;}
+		.ra_crop_thumb {height: 180px; width: 180px;}
+		.st_content_block {display: block;}
+		.st_expand_heading {display: none;}
+		#st_primary_ad {text-align: center;}
+		#st_question_form {width: 720px;}
+		.st_hide_title {display: block;}
+		.row {font-size: 16px;}
+		.st_mobile_tablet {display: none;}
+		#st_description {max-height: 160px; overflow: hidden;}
+	}
+
+	/* Large Devices, Wide Screens */
+	@media only screen and (min-width : 1200px) {
+		.tb_review_avatar {display: block;}
+		.twitter_btn, .gplus_btn {display: inline;}
+		.st_trail_actions {float: right;}
+		.ra_crop_thumb {height: 165px; width: 165px;}
+		.st_content_block {display: block;}
+		.st_expand_heading {display: none;}
+		#st_primary_ad {border: 1px solid #ccc; padding: 15px 0 15px 0; text-align: center;}
+		#st_question_form {width: 820px;}
+		.st_hide_title {display: block;}
+		.row {font-size: 16px;}
+		.st_mobile_tablet {display: none;}
+		#st_description {max-height: 160px; overflow: hidden;}
+	}
+	
+	.st_review_actions {font-style: italic; font-color: #666;}
+	.st_review_actions a, .st_review_actions a:link, .st_review_actions a:hover {text-decoration: none; font-weight: bold;}
+	.st_review_star_column {text-align: center;}
+	.st_local_list {margin: 0 0 0 10px; padding: 0;}
+	.st_local_list a {text-decoration: none;}
+	.st_local_list a:hover {text-decoration: underline;}
+	.ra_category_icon_block {text-align: center; margin-bottom: 15px;}
+	.ra_category_icon_block div {margin-bottom: 5px;}
+	.ra_crop_thumb {margin: 0 auto; }
+	.st_expand_heading {padding: 10px; background: #eee; font-size: 16px; background-image: url('https://images.singletracks.com/graphics/expand.jpg'); background-repeat: no-repeat; background-position: 99% 50%; margin: 7px 0;}
+	.st_collapse_heading {background-image: url('https://images.singletracks.com/graphics/collapse.jpg') !important;}
+</style>
+	<div class="container">
+		
+		<div class="container">
+	<div class="row">
+        <br/> <br/> 
+        <div class="col-md-12">
+          <h3 class="section-title">Bizerte / Ras Angela Trail</h3>
+          <div class="section-title-divider"></div>
+            <br/> <br/> 
+</div>
+<div class="row" style='border-bottom: 1px solid #ccc; padding: 0 0 5px 0;'>
+	
+		
+	
+
+		
+		<div class="row">
+			<div class="col-md-12">			
+				<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-bottom: 15px;">
+				  <ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li><li data-target="#myCarousel" data-slide-to="1" class=""></li><li data-target="#myCarousel" data-slide-to="2" class=""></li><li data-target="#myCarousel" data-slide-to="3" class=""></li><li data-target="#myCarousel" data-slide-to="4" class=""></li><li data-target="#myCarousel" data-slide-to="5"></li>			  </ol>
+				  <!-- Carousel items -->
+				  <div class="carousel-inner" role="listbox">
+					<div class="item active"style="width: 100%; height: 400px; background-image: url('img/Gallery/BizerteMTB/45.jpg'); background-size: cover; background-position: center center; padding: 100px 50px; color: #fff; text-align: center; background-color: #eee;" >
+					
+					<div class="carousel-caption">
+					  <p style=''></p>
+					</div>
+				</div><div class="item " style="width: 100%; height: 400px; background-image: url('img/Gallery/BizerteMTB/33.jpg'); background-size: cover; background-position: center center; padding: 100px 50px; color: #fff; text-align: center; background-color: #eee;" >
+					
+					<div class="carousel-caption">
+					  <p style=''></p>
+					</div>
+				</div><div class="item " style="width: 100%; height: 400px; background-image: url('img/Gallery/BizerteMTB/50.jpg'); background-size: cover; background-position: center center; padding: 100px 50px; color: #fff; text-align: center; background-color: #eee;" >
+					
+					<div class="carousel-caption">
+					  <p style=''></p>
+					</div>
+				</div><div class="item " style="width: 100%; height: 400px; background-image: url('img/Gallery/BizerteMTB/75.jpg'); background-size: cover; background-position: center center; padding: 100px 50px; color: #fff; text-align: center; background-color: #eee;" >
+					
+					<div class="carousel-caption">
+					  <p style=''></p>
+					</div>
+				</div><div class="item " style="width: 100%; height: 400px; background-image: url('img/Gallery/BizerteMTB/74.jpg'); background-size: cover; background-position: center center; padding: 100px 50px; color: #fff; text-align: center; background-color: #eee;" >
+					
+					<div class="carousel-caption">
+					  <p style=''></p>
+					</div>
+				</div><div class="item" style="background: #ddd; background-image: url('https://images.singletracks.com/graphics/more_photos.jpg'); background-position: center center; background-repeat: no-repeat;background-size: cover;">
+				<div style='height: 370px; width: 100%; text-align: center; overflow: hidden;'>
+					<div style='padding-top: 60px; font-size: 54px; font-weight: bold;'><a href="Bizerte.html" style='text-decoration: none; color: #fff; text-shadow: 5px 5px #000;'>VIEW<br />MORE<br />PHOTOS</a></div>
+				</div>
+			    </div>	
+                </div>
+				</div>
+			    </div>
+                </div>
+		
+		<div class="row">
+			<div class="col-md-12">			
+				<div class="row" style="background: #eaeaea; border-top: 1px solid #ccc; margin: 0 0 0 0; border-left: 1px solid #ccc;" id='st_stat_block'>
+					<div class='st_stat1 col-xs-6 col-sm-6 col-md-2' id='st_difficulty'><img src='https://images.singletracks.com/graphics/icons/difficulty/3.png' style='height: 25px;' /><br />Intermediate</div><div class='st_stat1 col-xs-6 col-sm-6 col-md-2'><div class='st_stat_major'>42</div><div style='st_stat_minor'>km</div></div><div class='st_stat1 col-xs-6 col-sm-6 col-md-2'><img src='https://images.singletracks.com/graphics/icons/tread_icon.png' style='height: 20px;' /><br />Singletrack</div><div class='st_stat1 col-xs-6 col-sm-6 col-md-2' style='font-size: 16px;'>&#8593; 1,868 ft<br />&#8595; 1,889 ft</div><div class='st_stat1 col-xs-6 col-sm-6 col-md-2' style='font-size: 16px;'><div class='st_stat_major'>750m</div><div style='font-size: 14px;'>elevation (m)</div></div><div class='st_stat1 col-xs-6 col-sm-6 col-md-2'><img src='https://images.singletracks.com/graphics/icons/config_icon.png' style='height: 20px;' /><br />Out & Back</div>				</div>
+
+				<div class='st_expand_heading' data-ref='st_description_block'><span class="glyphicon glyphicon-info-sign"></span> Trail Description</div>				
+				<span id='st_description_block' class='st_content_block'>
+					<div class="row" style="margin: 15px 0 0 0;">
+						<div class="col-md-3 st_hide_title">
+							<div class="st_block_title">About this <b>trail</b></div>
+						</div>
+						<div class="col-md-12">
+							<div id='st_description'>
+								Amazing Trail, killer views, and lung busting elevation - what more could you ask for? This brilliant route takes you from the Maison de Jeunesse in Bizerte to the wild and windswept beaches northwest of the city. You could skip the city part by parking at the edge of the pine forest.
+
+Once you left the urban area, you start climbing a fairly steep, rough road through the forest. There's a great viewing point where the track flattens a bit. A short downhill with a small section of single track brings you back to civilisation (the village of Nadhour). In the village turn right at the T-junction and go back to the forest. This is the home of a fast competition course held in March 2014. There great bits of single track on the side of the dirt road. At the first junction you can either go up and climb towards the navy station looking over Cap Blanc (recommended!). Return to this junction again. The at times rough track turning left stays in the forest and eventually leads to an open area where you can see the Mediterranean. A challenging downhill with sandy section leads to a main junction where you turn right. Follow this route (check for some great single track on the side!) which goes all the way to Ras Angela and the lighthouse. A view of the truly wild and virtually unspoilt coastline is your reward.
+
+Backtrack your route for around 9km to the junction after the challenging downhill. Here, turn right. A very long climb takes you back to the tar road for a little bit. At the T-junction, turn left (you will pass the Bizerte prison). At Nadhour, backtrack the forest track (the first long climb). Great, fast downhill back to Bizerte!
+							</div>					
+							<div style="font-size: 12px; color: #999; margin-top: 15px;">
+                                added by <a href='Members.html'>Peloton Punique</a></div>
+						
+				</span>
+
+				<div class='st_expand_heading' data-ref='st_features_block'><span class="glyphicon glyphicon-th"></span> Trail Features</div>				
+				<span id='st_features_block' class='st_content_block'>
+					<div class="row" style="margin: 15px 0 0 0; border-top: 1px solid #ccc; padding: 15px 0 0 0;">
+						<div class="col-md-3">
+							<div class="st_block_title st_hide_title">Trail <b>features</b></div>
+							<div style="font-size: 12px;"></div>						</div>
+						<div class="col-md-4 col-sm-6">
+							<ul class='st_trail_features'>
+								<li class=''>Lift Service</li>
+								<li class=''>Drinking Water</li>
+								<li class='st_trail_feature_check'>Swimming
+                            </li>
+							</ul>
+						</div>
+						<div class="col-md-5 col-sm-6">
+							<ul class='st_trail_features'>
+								<li class=''>Pump Track</li>
+								<li class=''>Restrooms</li>
+								<li class=''>Winter Fat Biking</li>
+							</ul>
+						</div>
+					</div>		
+				</span>
+
+				<div class='st_expand_heading' data-ref='st_directions_block'><span class="glyphicon glyphicon-map-marker"></span> Directions to Trailhead</div>				
+				<span id='st_directions_block' class='st_content_block'>
+					<div class="row" style="margin: 15px 0 0 0; border-top: 1px solid #ccc; padding: 15px 0 0 0;">
+						<div class="col-md-3 st_hide_title">
+							<div class="st_block_title">Get <b>Directions</b></div>
+						</div>
+						<div class="col-md-9">
+							
+			<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+			<script type="text/javascript">
+				function map_load(){
+					var latlng = new google.maps.LatLng('37.277537', '9.869714');
+					centerlatlng = latlng;
+					var myOptions = {
+					  zoom: 6,
+					  center: latlng,
+					  scrollwheel: false		  	  
+					};
+
+					map = new google.maps.Map(document.getElementById("directions_map"), myOptions);
+
+					function createmarker (latlng, title, html, icon_image){
+						var infowindow = new google.maps.InfoWindow({
+										content: html
+									});
+						var marker = new google.maps.Marker({
+							  position: latlng, 
+							  map: map, 
+							  title: title,
+							  icon: icon_image
+						  });            
+						google.maps.event.addListener(marker, 'click', function() {
+								  infowindow.open(map,marker);
+								}); 
+						return marker;
+					  
+					  }
+				
+						var wpt_data = [{"lat":"37.277537","lon":"9.869714","name":null,"html":"<a  style='width: 100px; height: 75.187969924812px' \/><\/a>","icon_image":"https://images.singletracks.com\/graphics\/icons\/photo_map_icon.png"},{"lat":"37.277537","lon":"9.869714","icon_image":"https://images.singletracks.com\/graphics\/icons\/bike_downhill_black.png"}]
+						
+						$.each(wpt_data, function(wptno, wptarray) {
+								var location = new google.maps.LatLng(wptarray['lat'], wptarray['lon']);
+								markerIcon = wptarray['icon_image'];
+								createmarker(location, wptarray['name'], wptarray['html'], markerIcon);
+						});	
+				}
+			</script>
+			<div id='directions_map' style='width: 100%; height: 250px; margin: 0; padding: 0; background: #eee;'>loading...</div>			
+			<div>
+		
+				<form action="https://maps.google.com/maps" method="GET" class="form-inline" target="_blank" style='margin-bottom: 10px;'>
+					<input type="hidden" name="daddr" value="37.277537 , 9.869714" >
+					<input type="hidden" name="hl" value="en">
+					<div class="input-group" style='width: 100%; margin-top: 10px;'>
+						<input type="text" class='form-control' name="saddr" style="color: #666;" value="starting address..." onclick="this.value='';">
+						<span class="input-group-btn"><input type="submit" value="Map It"  class="btn btn-default"></span>
+					</div>
+				</form>
+                <br/>
+                
+                           <div class="gps"  > <img src="img/GPSPics/BizerteRasAngela.jpg" style="max-width: 100%; " > </div>
+                         
+                          <br/>
+                            <a href="https://connect.garmin.com/modern/activity/1864150662" target="_blank"><button>Bizerte/Ras Angela Trail</button></a>
+                            <a href="img/GPX/bizerteras-angela-ride.gpx"><button>Download GPX File</button></a>
+                   
+    
+                        </span>
+				
+
+<script>
+fbq('track', 'ViewContent');
+</script>
+<script>fbq('track', 'ViewContent');</script>
+<script type="text/javascript" language="JavaScript">
+	function load_more_reviews(start, itemid){
+		$.get("https://www.singletracks.com//ajax/reviews_ajax.php?item_hash=i:1:"+itemid+"&start="+start, function (data){
+			$('#more_reviews_block').append(data);
+			$('#more_reviews_btn'+start).hide();
+		});
+	}
+
+	(function($) {
+		$(document).ready(function() {
+			$.getJSON('https://www.singletracks.com/ra-content/plug-ins/stats/json.php?ga_flag=0&url=http%3A%2F%2Fwww.singletracks.com%2Fbike-trails%2Fcolorado-trail.html&comments=0&callback=?', function(data){$('.st_shares').html(data['shares']);});
+			if($(window).width()<769){$("#st_primary_ad").insertAfter("#st_stat_block");}
+			
+			$(".st_expand_heading").click(function(event){
+				event.preventDefault();
+				var btnid = $(this).data('ref');
+				$('#'+btnid).toggle();
+				$(this).toggleClass('st_collapse_heading');
+				if (btnid=='st_directions_block'){
+					google.maps.event.trigger(map, "resize");
+					map.setCenter(centerlatlng);				
+				}
+			});
+		});
+	})(jQuery);
+	
+	
+
+	function st_video_click(video_id){
+		$('#st_video_block'+video_id).load("https://www.singletracks.com/ajax/ra_video_play.php?v="+video_id);
+		$('#myCarousel').carousel('pause');
+		$('#st_video_block'+video_id).css('background', '#000');
+	}
+
+	$("#st_status_field").autocomplete({
+		  source: ["Good", "Fair", "Poor", "Fat Bike", "Wet", "Dry", "Overgrown", "Icy", "Leaf-covered", "Tacky", "Hero Dirt", "Dusty", "Loose", "Freeze/Thaw", "Snow: Powder", "Snow: Packed"]
+	});
+
+	var watchstatus = 1;
+	function watch_click(){
+		$.get('https://www.singletracks.com/submit.php?function=watch&response_type=data&item_id=1:i:3964&s='+watchstatus, function(data){
+			if (data == 1){$('#watch_button').empty().html("<a href='javascript:watch_click();' class='btn btn-sm st_social_button' style='margin-top: -10px'><i class='icon-eye-close'></i> Stop Following</a>"); watchstatus = 0;}
+			else {$('#watch_button').empty().html("<a href='javascript:watch_click();' class='btn btn-sm st_social_button' style='margin-top: -10px'><i class='icon-eye-open'></i> Follow</a>"); watchstatus = 1;}
+		});	
+	}
+
+	$('#st_conditions_button').click(function(e){
+		e.preventDefault();
+		trail_conditions_status = $('#st_status_field').val();
+		$.post( "https://www.singletracks.com/st_custom/st_submit.php", { trail_id: "3964", a: "trail_status2", status: trail_conditions_status } )
+			.done(function(data){
+				$('#st_trail_conditions').empty().html(data);
+			});
+	});
+
+</script>
+
+	<!-- /container -->
+	<script type="text/javascript">
+				$(".big_search").autocomplete({
+			source: "https://www.singletracks.com/ajax/st_search.php?t=all",
+			minLength: 5,
+			select: function( event, ui ) {
+				// if (ui.item.value.slice(-1) != '?'){addstring = '?';}
+				// else {addstring = '&';}
+				// window.location.href = ui.item.value + addstring + '';
+				window.location.href = ui.item.value;
+				return false;
+			}
+		});
+	</script>
+
+	<div id="fb-root" style="height: 1px;"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1&appId=116213951733605";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<!-- Start Singletracks Quantcast tag -->
+	<script type="text/javascript" src="https://edge.quantserve.com/quant.js"></script>
+	<script type="text/javascript">
+	_qacct="p-bdjI4bdQQbqYU";quantserve();</script>
+	<noscript>
+	<img src="https://pixel.quantserve.com/pixel/p-bdjI4bdQQbqYU.gif" style="display: none" height="1" width="1" alt="Quantcast"/></noscript>
+	<!-- End Quantcast tag -->
+
+                        </div></div></span></div></span></div></div></div></div>
+  
+    
+    
+    
+ 
+  
+    <br/><br/><br/>
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    
+  
+
+  <!-- Required JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/morphext/morphext.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/stickyjs/sticky.js"></script>
+  <script src="lib/easing/easing.js"></script>
+  
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="js/custom.js"></script>
+  
+  <script src="contactform/contactform.js"></script>
+    </div>
+    </div>
+    </body>
+    <!--==========================
+  Footer
+============================--> 
+  <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="copyright">
+              &copy; Copyright <strong>Peloton Punique</strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+              <!-- 
+                All the links in the footer should remain intact. 
+                You can delete the links only if you purchased the pro version.
+                Licensing information: https://bootstrapmade.com/license/
+                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
+              -->
+            
+            </div>
+          </div>
+        </div>
+      </div>
+  </footer><!-- #footer -->
+  
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    
+
+</html>
